@@ -67,6 +67,8 @@ class ParabolaAnimateWidgetState extends State<ParabolaAnimateWidget> with
       generateAnimateAttr();
       startAnimation();
     });
+    widgetLeft = startOffset.dx ==null ? widgetLeft : startOffset.dx;
+    widgetTop = startOffset.dy == null ? widgetTop : startOffset.dy;
 
   }
 
