@@ -26,3 +26,16 @@ ParabolaAnimateWidget(rootKey,startOffset,endOffset,Icon(Icons.cancel,color: Col
 if you have some good thoughts about function, can tell me in there, i will add it soon(it's should be a common functional). 
 
 
+
+
+
+
+
+## CORNER
+
+向大佬学习，嘿嘿！
+lern from Mr.Big. XD
+
+![image](https://github.com/bladeofgod/throw_cart_demo/blob/master/images/alipay.png)
+![image](https://github.com/bladeofgod/throw_cart_demo/blob/master/images/wechat.png)
+
