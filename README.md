@@ -12,6 +12,11 @@ the function is you can give a start and end point(on left or right its compatib
 
 this a simple tool :), you can realize through this param's name; and clone this demo see more detail.
 
+// rootkey传根部局的可以， 主要用于定位。
+// rootkey is your rootWidget's key,it's help for location.
+// callback这个是动画的回调，会带会当前动画的status
+// callback is animation's status callback,
+
 ParabolaAnimateWidget(rootKey,startOffset,endOffset,Icon(Icons.cancel,color: Colors.greenAccent,),callback,);
 
 ## MORE
