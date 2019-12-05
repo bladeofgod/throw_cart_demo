@@ -28,6 +28,7 @@
 .pub-cache/
 .pub/
 /build/
+.parabola_animate_widget.dart
 
 # Web related
 lib/generated_plugin_registrant.dart

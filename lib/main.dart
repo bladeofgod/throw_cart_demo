@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:add_cart_parabola/add_cart_parabola.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_mall_cart/parabola_animate_widget.dart';
+
 
 
 
