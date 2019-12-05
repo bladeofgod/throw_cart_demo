@@ -2,7 +2,7 @@
 
 指定起点、终点(左右均可)和widget A，将A以抛物线的形式从起点运动到终点（在同一水平线上的话，效果啥样我也不清楚了）。
 
-the function is you can give a start and end point(on left or right its compatible,but not in a horzontal line),and provide a widget.ParabolaAnimateWidget will animate the widget that you provide, form start to end follow a parabola path.
+the function is you can give a start and end point(on left or right its compatible,but not in a horzontal line),and provide a widget.ParabolaAnimateWidget will animate the widget that you provide, from start to end point follow a parabola path.
 
 ## USAGE
 
