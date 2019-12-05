@@ -22,24 +22,17 @@ class ParabolaAnimateWidget extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return ParabolaAnimateWidgetState(rootKey,startOffset,endOffset,
-      animateWidget,animateCallback,this.duration);
+    return ParabolaAnimateWidgetState();
   }
 
 }
 
 class ParabolaAnimateWidgetState extends State<ParabolaAnimateWidget> with
     SingleTickerProviderStateMixin {
-  final GlobalKey rootKey;
-  final Offset startOffset;
-  final Offset endOffset;
-  final Widget animateWidget;
-  final Function animateCallback;
-  int _animationDuration ;
 
-  ParabolaAnimateWidgetState(this.rootKey,this.startOffset,this.endOffset,
-  this.animateWidget,this.animateCallback,int duration)
-    : _animationDuration = duration == -1 ? 1 : duration;
+
+
+  ParabolaAnimateWidgetState();
 
 
 
@@ -60,15 +53,19 @@ class ParabolaAnimateWidgetState extends State<ParabolaAnimateWidget> with
     // TODO: implement initState
     super.initState();
     _controller = AnimationController(vsync: this,duration: Duration(seconds:
-    _animationDuration));
+    widget.duration <=0 ? 1 : widget.duration));
 
 
     WidgetsBinding.instance.addPostFrameCallback((_){
+      if(widget.startOffset == null || widget.endOffset == null){
+        widget.animateCallback(AnimationStatus.completed);
+        return;
+      }
       generateAnimateAttr();
       startAnimation();
     });
-    widgetLeft = startOffset.dx ==null ? widgetLeft : startOffset.dx;
-    widgetTop = startOffset.dy == null ? widgetTop : startOffset.dy;
+    widgetLeft = widget.startOffset?.dx ==null ? widgetLeft : widget.startOffset.dx;
+    widgetTop = widget.startOffset?.dy == null ? widgetTop : widget.startOffset.dy;
 
   }
 
@@ -77,20 +74,21 @@ class ParabolaAnimateWidgetState extends State<ParabolaAnimateWidget> with
 //    Offset startOffset = startRB.localToGlobal(Offset.zero,ancestor: rootKey.currentContext.findRenderObject());
 //    RenderBox endRB = endKey.currentContext.findRenderObject();
 //    Offset endOffset = endRB.localToGlobal(Offset.zero,ancestor: rootKey.currentContext.findRenderObject());
-    Path path = getPath(startOffset, endOffset);
+    Path path = getPath();
     PathMetrics pms = path.computeMetrics();
     animatePM = pms.elementAt(0);
     animateLen = animatePM.length;
 
   }
 
-  Path getPath(Offset start,Offset end) {
+  Path getPath() {
 
     //print("start offset :${start.toString()}");
-    double controlPointX = start.dx > end.dx ? start.dx : end.dx;
+    double controlPointX = widget.startOffset.dx > widget.endOffset.dx ?
+    widget.startOffset.dx : widget.endOffset.dx;
     Path path = Path();
-    path.moveTo(start.dx,start.dy);
-    path.quadraticBezierTo(controlPointX / 2, start.dy, end.dx, end.dy);
+    path.moveTo(widget.startOffset.dx,widget.startOffset.dy);
+    path.quadraticBezierTo(controlPointX / 2, widget.startOffset.dy, widget.endOffset.dx, widget.endOffset.dy);
     //path.cubicTo(size.width / 4, 3 * size.height / 4, 3 * size.width / 4, size.height / 4, size.width, size.height);
 
     return path;
@@ -104,7 +102,7 @@ class ParabolaAnimateWidgetState extends State<ParabolaAnimateWidget> with
     return Positioned(
       left: widgetLeft,
       top: widgetTop,
-      child: animateWidget,
+      child: widget.animateWidget,
     );
   }
 
@@ -122,7 +120,7 @@ class ParabolaAnimateWidgetState extends State<ParabolaAnimateWidget> with
           });
         })
         ..addStatusListener((status){
-          animateCallback(status);
+          widget.animateCallback(status);
           if(status == AnimationStatus.completed){
             _controller?.stop();
             _controller?.dispose();
