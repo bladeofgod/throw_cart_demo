@@ -85,10 +85,10 @@ class ParabolaAnimateWidgetState extends State<ParabolaAnimateWidget> with
   Path getPath(Offset start,Offset end) {
 
     //print("start offset :${start.toString()}");
+    double controlPointX = start.dx > end.dx ? start.dx : end.dx;
     Path path = Path();
     path.moveTo(start.dx,start.dy);
-    path.quadraticBezierTo(
-        end.dx / 2, start.dy, end.dx, end.dy);
+    path.quadraticBezierTo(controlPointX / 2, start.dy, end.dx, end.dy);
     //path.cubicTo(size.width / 4, 3 * size.height / 4, 3 * size.width / 4, size.height / 4, size.width, size.height);
 
     return path;
