@@ -4,6 +4,8 @@
 
 the function is you can give a start and end point(on left or right its compatible,but not in a horzontal line),and provide a widget.ParabolaAnimateWidget will animate the widget that you provide, from start to end point follow a parabola path.
 
+![image](https://github.com/bladeofgod/throw_cart_demo/blob/master/images/throwInCart.gif)
+
 ## USAGE
 
 看名字差不多就能知道意思，俺就不多写了，具体可以下载demo，里面更为清楚具体。
