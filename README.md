@@ -9,6 +9,7 @@ the function is you can give a start and end point(on left or right its compatib
 ## INSTAL
 
 dependencies:
+
   add_cart_parabola: ^0.0.3
 
 ## USAGE
