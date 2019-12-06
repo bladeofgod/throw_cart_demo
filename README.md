@@ -6,6 +6,11 @@ the function is you can give a start and end point(on left or right its compatib
 
 ![image](https://github.com/bladeofgod/throw_cart_demo/blob/master/images/throwInCart.gif)
 
+## INSTAL
+
+dependencies:
+  add_cart_parabola: ^0.0.3
+
 ## USAGE
 
 看名字差不多就能知道意思，俺就不多写了，具体可以下载demo，里面更为清楚具体。
