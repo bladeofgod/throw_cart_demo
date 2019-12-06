@@ -6,7 +6,7 @@ the function is you can give a start and end point(on left or right its compatib
 
 ![image](https://github.com/bladeofgod/throw_cart_demo/blob/master/images/throwInCart.gif)
 
-## INSTAL
+## INSTALL
 
 dependencies:
 
