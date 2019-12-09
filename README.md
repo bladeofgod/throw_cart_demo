@@ -10,7 +10,7 @@ the function is you can give a start and end point(on left or right its compatib
 
 dependencies:
 
-  add_cart_parabola: ^0.0.3
+  add_cart_parabola: ^0.0.5
 
 ## USAGE
 
@@ -25,6 +25,10 @@ this a simple tool :), you can realize through this param's name; and clone this
 // callback这个是动画的回调，会带会当前动画的status
 
 // callback is animation's status callback,
+
+// controlRatio 控制点的系数，默认是2（小于1可能会有意想不到的效果）
+
+// controlRatio default value is 2 (if it's smaller than 1, maybe cause some effect that you don't wanna see)
 
 ParabolaAnimateWidget(rootKey,startOffset,endOffset,Icon(Icons.cancel,color: Colors.greenAccent,),callback,);
 
